@@ -4,7 +4,7 @@ Data and code to run the simulations, extract information, train machine learnin
 
 
 <p align="center">
-  <img src="Figures/Simulations_cover.png" width="550" height="200">
+  <img src="Figures/Simulations_cover.png" width="600" height="300">
 </p>
 
 
