@@ -1,0 +1,28 @@
+; ======= nvt.mdp =======
+integrator      = md
+dt              = 0.002
+nsteps          = 2500000       ; 5 ns
+
+tcoupl          = V-rescale
+tc-grps         = Water CNT
+tau_t           = 0.1   0.1
+ref_t           = 100   100
+
+pcoupl          = no
+constraints     = h-bonds
+cutoff-scheme   = Verlet
+nstlist         = 20
+rlist           = 1.0
+rcoulomb        = 1.0
+rvdw            = 1.0
+coulombtype     = PME
+pbc             = xyz
+
+nstxout-compressed = 1000
+nstenergy          = 1000
+nstlog             = 1000
+
+freezegrps      = CNT
+freezedim       = Y Y Y
+
+energygrps = CNT SOL

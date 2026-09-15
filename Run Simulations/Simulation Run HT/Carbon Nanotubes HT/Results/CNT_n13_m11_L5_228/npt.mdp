@@ -1,0 +1,43 @@
+; ======= NPT Equilibration =======
+integrator      = md
+dt              = 0.002
+nsteps          = 100_000       ; 1 ns run (can extend if needed)
+
+; === Temperature coupling ===
+tcoupl          = V-rescale
+tc-grps         = Water CNT
+tau_t           = 0.1   0.1
+ref_t           = 300   300    ; target temperature in Kelvin
+
+; === Pressure coupling ===
+pcoupl          = Berendsen
+pcoupltype      = isotropic
+tau_p           = 1.0
+ref_p           = 1.0
+compressibility = 4.5e-5
+
+
+; === Constraints ===
+constraints     = h-bonds
+constraint_algorithm = lincs
+
+; === Nonbonded interactions ===
+cutoff-scheme   = Verlet
+nstlist         = 20
+rlist           = 1.0
+rcoulomb        = 1.0
+rvdw            = 1.0
+coulombtype     = PME
+pbc             = xyz
+
+; === Output control ===
+nstxout-compressed = 1000
+nstenergy          = 1000
+nstlog             = 1000
+
+; === Other settings ===
+nsttcouple     = 1
+nstpcouple     = 1
+
+; === Energy groups (optional) ===
+energygrps = CNT SOL

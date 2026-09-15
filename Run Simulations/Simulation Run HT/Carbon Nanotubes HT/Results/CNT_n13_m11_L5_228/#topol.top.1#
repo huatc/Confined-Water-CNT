@@ -1,0 +1,16 @@
+topol.top
+; ======= topol.top =======
+#include "oplsaa.ff/forcefield.itp"
+
+; your CNT include-topology
+#include "cnt.itp"
+
+; SPC/E water model in OPLS-AA
+#include "oplsaa.ff/spc.itp"
+
+[ system ]
+CNT + water
+
+[ molecules ]
+CNT    1
+SOL    0
